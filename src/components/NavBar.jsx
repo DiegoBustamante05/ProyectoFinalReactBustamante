@@ -18,7 +18,7 @@ import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 const pages = ["Home", "Productos", "Categorias", ""];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const NavBar = ( {cart} ) => {
+const NavBar = ( {counter} ) => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -124,7 +124,7 @@ const NavBar = ( {cart} ) => {
                             </Button>
                         ))}
                     </Box>
-                    <CartWidget/> {cart}
+                    <CartWidget/> {counter}
                 </Toolbar>
             </Container>
         </AppBar>
