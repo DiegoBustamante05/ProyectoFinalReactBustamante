@@ -4,7 +4,7 @@ import ItemListContainer from './components/ItemListContainer';
 import { ThemeProvider } from '@mui/material';
 import theme from './MyTheme';
 import ItemDetailContainer from './components/ItemDetailContainer';
-
+import {BrowserRouter , Routes, Route} from 'react-router-dom'
 
 
 
@@ -15,9 +15,15 @@ function App() {
   
   return (
     <ThemeProvider theme={theme}>
-      <NavBar counter={counter}/>
-      <h1 align="center"> Bahia Cripto Mining</h1>
-      <ItemDetailContainer/>
+      <BrowserRouter>
+        <NavBar counter={counter}/>
+        <h1>Bahia Cripto Mining</h1>
+          <Routes>
+            <Route path='/' element={<ItemListContainer greeting={greeting} />}/>
+            <Route path='/categoria/:categoriaId' element={<ItemListContainer greeting={greeting} />}/>
+            <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
+          </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

@@ -17,11 +17,11 @@ const ItemDetail = ({ detalle }) => {
             alignItems: 'center',
         }}
         >
-        <img src={img} alt={name} />
-        <p>{name}</p>
-        <p>{description}</p>
-        <p>${price}</p>
-        <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+            <h3>{name}</h3>
+            <img src={img} alt={name} />
+            <p className="descriptionMargin">{description}</p>
+            <h5>${price}</h5>
+            <ItemCount stock={stock} initial={1} onAdd={onAdd} />
         </div>
     );
 };

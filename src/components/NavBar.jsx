@@ -14,8 +14,9 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import CartWidget from "./CarWidget";
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
+import { NavLink } from "react-router-dom";
 
-const pages = ["Home", "Productos", "Categorias", ""];
+const pages = [{enlace:'/categoria/Hardware', nombre:'Hardware'}, {enlace:'/categoria/Rig', nombre:'Rig'}, {enlace:'/categoria/Wallet', nombre:'Wallet'}];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = ( {counter} ) => {
@@ -42,11 +43,11 @@ const NavBar = ( {counter} ) => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <CurrencyBitcoinIcon sx={{ color: '#fff01f' }} />
+                    <NavLink to='/' style={{color:'white', textDecoration:'none' }}>
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
-                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: "none", md: "flex" },
@@ -59,6 +60,7 @@ const NavBar = ( {counter} ) => {
                     >
                         Bahia Cripto Mining
                     </Typography>
+                    </NavLink>
                     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                         <IconButton
                             size="large"
@@ -90,7 +92,7 @@ const NavBar = ( {counter} ) => {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <NavLink style={{color:'black', textDecoration:'none' }} to={page.enlace}>{page.nombre}</NavLink>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -99,7 +101,6 @@ const NavBar = ( {counter} ) => {
                         variant="h5"
                         noWrap
                         component="a"
-                        href=""
                         sx={{
                             mr: 2,
                             display: { xs: "flex", md: "none" },
@@ -114,15 +115,11 @@ const NavBar = ( {counter} ) => {
                         Bahia Cripto Mining
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: "white", display: "block" }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                            {pages.map((page) => (
+                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                    <NavLink style={{color:'white', textDecoration:'none' }} to={page.enlace}>{page.nombre}</NavLink>
+                                </MenuItem>
+                            ))}
                     </Box>
                     <CartWidget/> {counter}
                 </Toolbar>
