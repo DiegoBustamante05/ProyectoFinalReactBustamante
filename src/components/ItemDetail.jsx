@@ -1,10 +1,20 @@
 import React from "react";
 import ItemCount from "./ItemCount";
+import { useState } from "react";
+import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
+import { Container } from "@mui/system";
+
 
 const ItemDetail = ({ detalle }) => {
+    const [count, setCount] = useState(1);
+    const [compra, setCompra] = useState(false)
     const { id, name, description, price, img, stock } = detalle;
+    const navegar = useNavigate()
+    
     const onAdd = () => {
-        console.log('compraste');
+        console.log(`compraste ${count} + ${name} `);
+        setCompra(true)
     };
     return (
         <div
@@ -21,7 +31,15 @@ const ItemDetail = ({ detalle }) => {
             <img src={img} alt={name} />
             <p className="descriptionMargin">{description}</p>
             <h5>${price}</h5>
-            <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+            { !compra ? <ItemCount stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount} />: 
+            <Container sx={{display: 'flex', justifyContent:'space-around'}}>
+                <Button variant="contained" size="small" onClick={()=>navegar('/')}>
+                Seguir Comprando
+                </Button>
+                <Button variant="contained" size="small" onClick={()=>navegar('/cart')}>
+                Ir al Carrito
+                </Button>
+            </Container>}
         </div>
     );
 };

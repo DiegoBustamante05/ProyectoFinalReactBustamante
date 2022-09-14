@@ -4,18 +4,18 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 
-const ItemCount = ({ initial, stock, onAdd }) => {
-const [counter, setCounter] = useState(initial);
+const ItemCount = ({ initial, stock, onAdd, count, setCount }) => {
+
 
 const add = () => {
-    if (counter < stock) {
-        setCounter(counter +1)
+    if (count < stock) {
+        setCount(count +1)
     }
 }
 
 const subtract = () => {
-    if (counter > 0){
-        setCounter(counter -1)
+    if (count > 0){
+        setCount(count -1)
     }
 }
 
@@ -35,7 +35,7 @@ return (
         -
         </Button>
         <Button variant="outlined">
-        {counter}
+        {count}
         </Button>
         <Button variant="contained" size="small" onClick={add}>
         +
