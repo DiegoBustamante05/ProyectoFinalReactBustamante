@@ -4,9 +4,9 @@ import ItemListContainer from './components/ItemListContainer';
 import { ThemeProvider } from '@mui/material';
 import theme from './MyTheme';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import {BrowserRouter , Routes, Route} from 'react-router-dom'
+import { BrowserRouter , Routes, Route } from 'react-router-dom'
 import Cart from './components/Cart';
-
+import { CartProvider } from './context/CartContext';
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
   const greeting = 'Bienvenidos'
   
   return (
+    <CartProvider>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <NavBar counter={counter}/>
@@ -25,6 +26,7 @@ function App() {
           </Routes>
       </BrowserRouter>
     </ThemeProvider>
+    </CartProvider>
   );
 }
 

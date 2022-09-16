@@ -4,18 +4,29 @@ import { useState } from "react";
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import { Container } from "@mui/system";
-
+import { useCart } from "../context/CartContext";
 
 const ItemDetail = ({ detalle }) => {
     const [count, setCount] = useState(1);
     const [compra, setCompra] = useState(false)
     const { id, name, description, price, img, stock } = detalle;
     const navegar = useNavigate()
+    const{addItem}=useCart()
+
     
     const onAdd = () => {
-        console.log(`compraste ${count} + ${name} `);
+        let purchase = {
+            id,
+            name,
+            price,
+            stock,
+            img,
+            quantity: count
+        }
         setCompra(true)
+        addItem(purchase)
     };
+
     return (
         <div
             style={{

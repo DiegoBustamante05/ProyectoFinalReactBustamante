@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import CartWidget from "./CarWidget";
+import CartWidget from "./CartWidget";
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import { NavLink } from "react-router-dom";
 
