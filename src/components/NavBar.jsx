@@ -121,7 +121,9 @@ const NavBar = ( {counter} ) => {
                                 </MenuItem>
                             ))}
                     </Box>
-                    <CartWidget/> {counter}
+                    <NavLink to='/cart'>
+                    <CartWidget/> 
+                    </NavLink>
                 </Toolbar>
             </Container>
         </AppBar>
