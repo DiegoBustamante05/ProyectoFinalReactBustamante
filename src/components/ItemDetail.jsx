@@ -1,10 +1,9 @@
-import React from "react";
-import ItemCount from "./ItemCount";
-import { useState } from "react";
 import Button from '@mui/material/Button';
-import { useNavigate } from "react-router-dom";
 import { Container } from "@mui/system";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ detalle }) => {
     const [count, setCount] = useState(1);

@@ -1,5 +1,5 @@
-import React from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import React from 'react';
 import { useCart } from '../context/CartContext';
 
 const CartWidget = () => {
