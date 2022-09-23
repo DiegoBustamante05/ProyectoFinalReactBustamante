@@ -87,7 +87,7 @@ const NavBar = ( {counter} ) => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                <MenuItem key={page.enlace} onClick={handleCloseNavMenu}>
                                     <NavLink style={{color:'black', textDecoration:'none' }} to={page.enlace}>{page.nombre}</NavLink>
                                 </MenuItem>
                             ))}
@@ -112,7 +112,7 @@ const NavBar = ( {counter} ) => {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                <MenuItem key={page.enlace} onClick={handleCloseNavMenu}>
                                     <NavLink style={{color:'white', textDecoration:'none' }} to={page.enlace}>{page.nombre}</NavLink>
                                 </MenuItem>
                             ))}
