@@ -33,7 +33,7 @@ const Cart = () => {
                         <Button variant="contained" size="small" onClick={clear}>
                                 Vaciar Carrito
                         </Button>
-                        <Button variant="contained" size="small">
+                        <Button variant="contained" size="small" onClick={()=>navegar('/checkout')}>
                                 Terminar Compra
                         </Button>
                     </div>

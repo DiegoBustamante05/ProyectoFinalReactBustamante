@@ -32,12 +32,45 @@ h1{
   text-align: center;
 }
 
+.orden{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px;
+  border: solid;
+}
+
+.imgCart{
+  height: 10vh;
+  width: 10vw;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.8em;
+}
+
+.forMargin{
+  margin: 5px;
+}
+
+.alerta{
+  color:red;
+}
+
+.loading{
+  font-size: 2em;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;
@@ -62,3 +95,5 @@ h1{
     transform: rotate(360deg);
   }
 }
+
+
