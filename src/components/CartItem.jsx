@@ -9,7 +9,7 @@ const CartItem = ({prod}) => {
             <img  className="imgCart" src={prod.img} alt={prod.name}/>
             <p>{prod.name}</p>
             <p>{prod.quantity}</p>
-            <p>{prod.price}</p>
+            <p>${prod.price}</p>
             <Button variant="contained" size="small" onClick={()=>removeItem(prod.id)}>
                         X
             </Button>

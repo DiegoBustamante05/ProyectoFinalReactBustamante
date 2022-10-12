@@ -39,8 +39,8 @@ const NavBar = ( {counter} ) => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <CurrencyBitcoinIcon sx={{ color: '#fff01f' }} />
-                    <NavLink to='/' style={{color:'white', textDecoration:'none' }}>
-                    <Typography
+                    <NavLink to='/' className="navLinkColor">
+                    <Typography 
                         variant="h6"
                         noWrap
                         component="a"
@@ -88,7 +88,7 @@ const NavBar = ( {counter} ) => {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page.enlace} onClick={handleCloseNavMenu}>
-                                    <NavLink style={{color:'black', textDecoration:'none' }} to={page.enlace}>{page.nombre}</NavLink>
+                                    <NavLink className="navLinkColorMobile" to={page.enlace}>{page.nombre}</NavLink>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -99,7 +99,7 @@ const NavBar = ( {counter} ) => {
                         component="a"
                         sx={{
                             mr: 2,
-                            display: { xs: "flex", md: "none" },
+                            display: { xs: "none", md: "none" },
                             flexGrow: 1,
                             fontFamily: "monospace",
                             fontWeight: 700,
@@ -113,7 +113,7 @@ const NavBar = ( {counter} ) => {
                     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                             {pages.map((page) => (
                                 <MenuItem key={page.enlace} onClick={handleCloseNavMenu}>
-                                    <NavLink style={{color:'white', textDecoration:'none' }} to={page.enlace}>{page.nombre}</NavLink>
+                                    <NavLink className="navLinkColor" to={page.enlace}>{page.nombre}</NavLink>
                                 </MenuItem>
                             ))}
                     </Box>

@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext';
 const CartWidget = () => {
     const{cartQuantity, cart} =useCart()
     return(
-        <div>
+        <div className='widgetColor'>
         <ShoppingCartIcon/>
         <span>{cartQuantity() || ''  }</span>
         </div>

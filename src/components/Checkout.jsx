@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { db } from '../firebase/firebase'
 import { useCart } from '../context/CartContext'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '@mui/material'
+import { Button, CircularProgress } from '@mui/material'
 
 const Checkout = () => {
     const [comprador, setComprador]= useState({})
@@ -44,10 +44,10 @@ const Checkout = () => {
         
     }
     if(loader){
-        return <p className="loading">Cargando, un momento por favor...</p>
+        return <div className='spinner'><CircularProgress size='10vh' color="info"/></div>
     }
     return (
-    <div>
+    <div className='spinner'>
         {!orderId 
         ?<div className="form">
             <h2>Checkout</h2>
@@ -65,15 +65,15 @@ const Checkout = () => {
                     <label  className="form-label">E-mail</label>
                     <input className="form-control" type="email" placeholder='bahiacripto@gmail.com' name="email"  onChange={datosComprador}/>
                 </div>
-                <Button variant="contained" size="small" type='submit'>Finalizar Compra</Button>
+                <Button variant="contained" color="info" size="small" type='submit'>Finalizar Compra</Button>
                 {mensaje && <p className='alerta'> Por favor complete todos los campos</p>}
         </form>
         </div>
         :
-        <div>
+        <div className='checkOut'>
         <h2>Muchas gracias por su compra!</h2>
         <h4>Orden: {orderId}</h4>
-        <Button variant="contained" size="small" onClick={()=> navigate('/')}>Volver</Button>
+        <div className='volver'><Button variant="contained" color="info" size="small" onClick={()=> navigate('/')}>Volver</Button></div>
         </div>}
     </div>
     )

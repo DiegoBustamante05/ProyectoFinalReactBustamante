@@ -14,26 +14,25 @@ const Cart = () => {
         <div>
             {
                 !cart.length
-                ? <div>
+                ? <div className='cart'>
                     <h2>El carrito está vacio.</h2>
                     <h5>Conocé nuestros productos!</h5>
-                    <Button variant="contained" size="small" onClick={()=>navegar('/')}>
+                    <Button variant="contained" color="info" size="small" onClick={()=>navegar('/')}>
                         Ver Productos
                     </Button>
                 </div>
                 : <div>
                     <h2>Productos en el carrito.</h2>
                     {cart.map((prod)=> <CartItem key={prod.id} prod={prod}/>)}
-                    <div style={{display: 'flex', justifyContent: 'end', alignItems:'center', margin:'30px'}}>
-                    <h4> Total: {cartTotal()}</h4>
+                    <div className='totalRight'>
+                    <h4> Total: ${cartTotal()}</h4>
                     </div>
                     
-                    <div style={{display: 'flex', justifyContent: 'space-evenly', alignItems:'center', margin:'30px'}}>
-                        
-                        <Button variant="contained" size="small" onClick={clear}>
+                    <div className='buttonsCart'>
+                        <Button variant="contained" color="info" size="small" onClick={clear}>
                                 Vaciar Carrito
                         </Button>
-                        <Button variant="contained" size="small" onClick={()=>navegar('/checkout')}>
+                        <Button variant="contained" color="info" size="small" onClick={()=>navegar('/checkout')}>
                                 Terminar Compra
                         </Button>
                     </div>

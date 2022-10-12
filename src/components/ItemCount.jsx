@@ -21,13 +21,7 @@ const subtract = () => {
 
 
 return (
-    <div style={{
-        gap: '40px',
-        margin: '80px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    }}>
+    <div className='counterStyle'>
         <div>
         <Button variant="contained" size="small" onClick={subtract}>
         -
@@ -40,7 +34,7 @@ return (
         </Button>
         </div>
         <div>
-            <Button variant="contained" size="small"onClick={onAdd}>
+            <Button variant="contained" color="info" size="small"onClick={onAdd}>
             Add to cart
             </Button>
         </div>

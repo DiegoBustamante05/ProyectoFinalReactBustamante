@@ -27,26 +27,17 @@ const ItemDetail = ({ detalle }) => {
     };
 
     return (
-        <div
-            style={{
-            width: '100%',
-            minHeight: '83.5vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}
-        >
+        <div className='itemDetail'>
             <h3>{name}</h3>
             <img src={img} alt={name} />
             <p className="descriptionMargin">{description}</p>
             <h5>${price}</h5>
             { !compra ? <ItemCount stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount} />: 
             <Container sx={{display: 'flex', justifyContent:'space-around'}}>
-                <Button variant="contained" size="small" onClick={()=>navegar('/')}>
+                <Button variant="contained" color="info" size="small" onClick={()=>navegar('/')}>
                 Seguir Comprando
                 </Button>
-                <Button variant="contained" size="small" onClick={()=>navegar('/cart')}>
+                <Button variant="contained" color="info" size="small" onClick={()=>navegar('/cart')}>
                 Ir al Carrito
                 </Button>
             </Container>}

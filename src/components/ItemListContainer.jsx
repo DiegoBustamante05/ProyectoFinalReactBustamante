@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../firebase/firebase';
 import ItemList from './ItemList';
-
+import { CircularProgress } from '@mui/material';
 
 const ItemListContainer = ({greeting}) => {
 
@@ -33,7 +33,7 @@ useEffect(()=>{
     return(
         <>
             <div>{greeting}</div>
-            <div>{loading ? <p>Loading</p> : <ItemList listProducts={listProducts} />}</div>
+            <div>{loading ? <CircularProgress className='spinner' size='10vh' color="info"/> : <ItemList listProducts={listProducts} />}</div>
         </>
     )
 }
