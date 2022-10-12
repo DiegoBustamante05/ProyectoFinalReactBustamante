@@ -20,6 +20,8 @@ Bahia Cripto Mining es un e-comerce de productos destinados a la minería de cri
 - Visualizacion de productos.
 - Filtrado por categoría.
 - Compra maxima de productos limitada por el stock del mismo.
+- Agregar mas unidades desde el carrito.
+- Eliminar items en el carrito.
 - Local storage.
 - Productos almacenados en Firebase.
 - Navegacion sin recargar la página.
